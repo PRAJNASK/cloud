@@ -1,14 +1,15 @@
-def factorial(n):
-    if n == 0 or n == 1:
-        return 1
-    else:
-        return n * factorial(n - 1)
+def fibonacci(n):
+    fib_sequence = []
+    a, b = 0, 1
+    for _ in range(n):
+        fib_sequence.append(a)
+        a, b = b, a + b
+    return fib_sequence
 
-# Get input from the user
-number = int(input("Enter a number: "))
+# User input
+n_terms = int(input("Enter the number of terms: "))
 
-# Calculate factorial
-result = factorial(number)
-
-# Print the result
-print(f"The factorial of {number} is {result}")
+# Generating Fibonacci series
+fib_series = fibonacci(n_terms)
+print("Fibonacci series:")
+print(fib_series)
